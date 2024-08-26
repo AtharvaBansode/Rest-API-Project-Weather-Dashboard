@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather in {{ weather['name'] }}</h1>
+        <div class="weather-info">
+            <p><strong>Temperature:</strong> {{ weather['main']['temp'] }} &deg;C</p>
+            <p><strong>Weather:</strong> {{ weather['weather'][0]['description'] }}</p>
+            <p><strong>Humidity:</strong> {{ weather['main']['humidity'] }}%</p>
+            <p><strong>Wind Speed:</strong> {{ weather['wind']['speed'] }} m/s</p>
+        </div>
+        <a class="btn" href="/">Back to Home</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
+
